@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+/* Filter Button */
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #ff7a18, #ff9f1c);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255,122,24,0.35);
+  transition: 0.3s;
+  margin: 6px;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  
+}
+
+/* Filter Panel */
+.filter-panel {
+  width: 280px;
+  margin-top: 15px;
+  padding: 22px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  position: fixed;
+
+  /* Hidden State */
+  transform: translateY(-10px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease;
+}
+
+.filter-panel.active {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.filter-panel h3 {
+  margin-bottom: 18px;
+  font-size: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+.filter-group {
+  margin-bottom: 16px;
+}
+
+.filter-group label {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #ff7a18;
+}
+
+/* Apply Button */
+.apply-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #222, #444);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: linear-gradient(135deg, #000, #333);
+}
+    </style>
+</head>
+<body>
+    <nav id="nav">
+<a href="index.html" class="nav-el">
+    <img src="Images/logo.png" alt="logo" id="logo"></a>
+   
+    <a href="index.html" class="nav-el">Home</a>
+    <a href="products.html" class="nav-el" style="font-weight: bolder;">Products</a>
+    <a href="about.html"class="nav-el">About us</a>
+    <a href="contact.html"class="nav-el">Contact</a>
+    <a href="search.html">
+    <div id="srch">
+    <p>Search</p>
+    <img src="Images/search.png" alt="" id="logi">
+    </div>
+  </a>
+    <a href="cart.html">
+    <img src="Images/cart.png" alt="" id="cart"></a>
+    <img src="Images/user.png" alt="" id="log">
+  </nav>
+   <button class="filter-btn" onclick="toggleFilter()">
+    <i id="filterIcon">☰</i>
+  <span>Filters</span>
+  
+</button>
+
+<div class="filter-panel" id="filterPanel">
+  <h3>Filter Products</h3>
+
+  <div class="filter-group">
+    <label>Search</label>
+    <input type="text" placeholder="Search products..." />
+  </div>
+
+  <div class="filter-group">
+    <label>Category</label>
+    <select>
+      <option>All</option>
+      <option>Clothing</option>
+      <option>Electronics</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label>Max Price</label>
+    <input type="range" min="0" max="5000" />
+  </div>
+
+  <button class="apply-btn">Apply</button>
+</div>
+<div id="main">
+<div class="shoe" >
+    <img src="Images/shoe.jpg" alt="" id="img" >
+    <div id="m">
+    <h3 id="l">Nike Shoes</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$299</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div>
+<div class="electronic" >
+    <img src="Images/OIP.webp" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Smartphone</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$2999</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div><div class="fashnn" >
+    <img src="Images/jacket.webp" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Men's Jacket</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$199</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div><div class="electronic" >
+    <img src="Images/earbud.webp" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Wireless Earbuds</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$499</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div><div class="electronic">
+    <img src="Images/watch.jpg" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Watch</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$599</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div>
+<a href="jeans.html"><div class="card">
+    <img src="Images/black jeans.jpg" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Black jeans</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$399</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div></a><a href="wallet.html"><div class="card" >
+    <img src="Images/wallet.avif" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Wallet</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$99</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div></a><a href="iron.html"><div class="card">
+    <img src="Images/iron box.avif" alt="" id="img" >
+    <div id="m">
+    <h3 id="l">Iron Box</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$299</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div></a><a href="tshirt.html">
+<div class="card">
+    <img src="Images/blue tshirt.webp" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Blue T-shirt</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$299</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div></a> <a href="addidas.html"><div class="card">
+    <img src="Images/addidas.webp" alt="" id="img">
+    <div id="m">
+    <h3 id="l">Addidas Shoe</h3>
+     <div style="display: inline-block; justify-content: space-evenly; width:200px;">
+          <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star filled.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+    <img src="Images/star blank.png" alt="" width="10px" height="10px">
+        </div>
+    <h4 id="l">$399</h4>
+    <button id="p">Add to Cart</button>
+    </div>
+</div></a>
+
+
+</div>
+
+</div>
+  <footer style=" margin-top: 15px; display: flex; background-color: hsl(0, 73%, 6%); padding: 12px; color: rgb(143, 144, 145); justify-content: space-around;">
+<div>
+  <img src="Images/logo.png" alt="" width="100px" height="40px">
+  <h4>About InternStore</h4>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing <br> r Esse dignissimos autem explicabo cupiditate  
+    <br> quia molestias officiis, cupiditate odit veritatis laborum. Sint <br> culpa modioluptatibus eaque cumque,
+     <br> dolorem qui temporibus dicta consequuntur vel repellat nisi!</p>
+
+</div>
+<div>
+  <h4>
+    Quick Links
+  </h4>
+    <a href="index.html" class="nav-e">Home</a><br>
+    <a href="products.html" class="nav-e">Products</a><br>
+    <a href="about.html"class="nav-e">About us</a><br>
+    <a href="contact.html"class="nav-e">Contact</a><br>
+
+</div>
+<div>
+  <h4>Customer Service</h4>
+  <p>FAQ</p>
+  <p>Shipping and return</p>
+  <p>Privacy policy</p>
+</div>
+
+</footer>
+<footer style=" background-color: hsl(0, 73%, 6%); text-align: center; color: rgb(143, 144, 145)">
+  &copy; 2024 InternStore. All rights reserved.
+</footer>
+<button id="scrollTopBtn">^</button>
+
+   
+    <script src="main.js"></script>
+</body>
+</html>

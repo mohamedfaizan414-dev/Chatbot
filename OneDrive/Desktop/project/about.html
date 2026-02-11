@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #555;
+}
+
+.navbar nav a.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* HERO */
+.hero {
+  background: #0aa2c0;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+}
+
+/* ABOUT SECTION */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.about-text h2 {
+  margin-bottom: 15px;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background: #f9f9f9;
+}
+
+.feature-box {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-box i {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #0aa2c0;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #ccc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+<body>
+    <nav id="nav">
+<a href="index.html" class="nav-el">
+    <img src="Images/logo.png" alt="logo" id="logo"></a>
+   
+    <a href="index.html" class="nav-el">Home</a>
+    <a href="products.html" class="nav-el">Products</a>
+    <a href="about.html"class="nav-el" style="font-weight: bolder;">About us</a>
+    <a href="contact.html"class="nav-el" >Contact</a>
+  <a href="search.html">
+    <div id="srch">
+    <p>Search</p>
+    <img src="Images/search.png" alt="" id="logi">
+    </div>
+  </a>
+  
+    <a href="cart.html">
+    <img src="Images/cart.png" alt="" id="cart"></a>
+    <img src="Images/user.png" alt="" id="log">
+  </nav>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <h1>About Us</h1>
+  <p>Who we are & what we do</p>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="about">
+  <div class="about-img">
+    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="About">
+  </div>
+
+  <div class="about-text">
+    <h2>Our Mission</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Totam sed quidem eum molestias sunt praesentium ea magni ipsam.
+    </p>
+    <p>
+      We aim to provide high quality products with fast delivery
+      and excellent customer support to make online shopping easy and reliable.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="feature-box">
+    <i class="fa-solid fa-credit-card"></i>
+    <h4>Credit Card Support</h4>
+  </div>
+
+  <div class="feature-box">
+    <i class="fa-solid fa-laptop"></i>
+    <h4>Online Order</h4>
+  </div>
+
+  <div class="feature-box">
+    <i class="fa-solid fa-truck-fast"></i>
+    <h4>Fast Delivery</h4>
+  </div>
+
+  <div class="feature-box">
+    <i class="fa-solid fa-gift"></i>
+    <h4>Product with Gift</h4>
+  </div>
+</section>
+
+  <footer style=" margin-top: 15px; display: flex; background-color: hsl(0, 73%, 6%); padding: 12px; color: rgb(143, 144, 145); justify-content: space-around;">
+<div>
+  <img src="Images/logo.png" alt="" width="100px" height="40px">
+  <h4>About InternStore</h4>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing <br> r Esse dignissimos autem explicabo cupiditate  
+    <br> quia molestias officiis, cupiditate odit veritatis laborum. Sint <br> culpa modioluptatibus eaque cumque,
+     <br> dolorem qui temporibus dicta consequuntur vel repellat nisi!</p>
+
+</div>
+<div>
+  <h4>
+    Quick Links
+  </h4>
+    <a href="index.html" class="nav-e">Home</a><br>
+    <a href="products.html" class="nav-e">Products</a><br>
+    <a href="about.html"class="nav-e">About us</a><br>
+    <a href="contact.html"class="nav-e">Contact</a><br>
+
+</div>
+<div>
+  <h4>Customer Service</h4>
+  <p>FAQ</p>
+  <p>Shipping and return</p>
+  <p>Privacy policy</p>
+</div>
+
+</footer>
+<footer style=" background-color: hsl(0, 73%, 6%); text-align: center; color: rgb(143, 144, 145)">
+  &copy; 2024 InternStore. All rights reserved.
+</footer>
+  <button id="scrollTopBtn">^</button>
+<script src="main.js"></script>
+</body>
+</html>
