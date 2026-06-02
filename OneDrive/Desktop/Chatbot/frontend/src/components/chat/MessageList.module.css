@@ -1,0 +1,14 @@
+.list {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 32px 16px;
+  min-height: 100%;
+  justify-content: flex-end;
+}
